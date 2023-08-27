@@ -1,0 +1,8 @@
+author: Raphael Nepomuceno
+lang: en-US
+
+site-title: /home/rphln
+github-repository: https://github.com/rphln/pandoc-blog-template
+
+suppress-bibliography: true
+csl: .pandoc/chicago-fullnote-bibliography-short-title-subsequent.csl

@@ -1,0 +1,407 @@
+/*! Section: Preferences */
+
+:root {
+  --font-main: normal 100%/1.5 "Noto Serif", "Noto Sans Math", "Noto Emoji",
+    serif;
+  --font-math: normal 100%/1.5 "Noto Sans Math", "Noto Serif", "Noto Emoji",
+    serif;
+  --font-mono: normal 100%/1.5 "Noto Sans Mono", "Noto Emoji", monospace;
+
+  --color-background: #ffffff;
+  --color-foreground: #3b4252;
+
+  --color-accent: #3366cc;
+  --color-border: #e5e9f0;
+
+  --color-code-comments: #dbf1ff;
+  --color-code-literals: #f9e0ff;
+
+  --main-width: 864px;
+
+  --margin-1: 8px;
+  --margin-2: 12px;
+  --margin-3: 16px;
+  --margin-4: 48px;
+
+  --border-radius: 4px;
+}
+
+:lang(en) {
+  --figure-label: "Figure";
+  --table-label: "Table";
+}
+
+:lang(pt) {
+  --figure-label: "Figura";
+  --table-label: "Tabela";
+}
+
+/*! Section: Boxes */
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+::before,
+::after {
+  box-sizing: inherit;
+}
+
+/*! Section: Layout */
+
+body {
+  margin: 0;
+  padding: 0;
+
+  border-top: 8px solid var(--color-accent);
+}
+
+main {
+  width: var(--main-width);
+  margin: var(--margin-4) auto;
+}
+
+main article {
+  width: calc(200% / 3);
+}
+
+/*! Section: Typography */
+
+body {
+  font: var(--font-main);
+  text-rendering: optimizeLegibility;
+
+  color: var(--color-foreground);
+  background: var(--color-background);
+}
+
+a {
+  color: var(--color-accent);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+article {
+  hyphens: auto;
+}
+
+sup,
+sub {
+  line-height: 0;
+}
+
+math {
+  font: var(--font-math);
+}
+
+code,
+kbd,
+pre,
+samp,
+tt,
+var {
+  font: var(--font-mono);
+}
+
+small,
+sub,
+sup {
+  font-size: smaller;
+}
+
+dt,
+figcaption::before,
+table caption::before {
+  font-style: normal;
+  font-weight: bolder;
+}
+
+/*! Section: Headings */
+
+h1,
+h2,
+h3,
+h4 {
+  font-weight: normal;
+
+  margin-top: 2em;
+  margin-bottom: 0;
+}
+
+h1 {
+  font-size: 1.8rem;
+  text-align: center;
+}
+
+h2 {
+  font-size: 1.4rem;
+}
+
+h3 {
+  font-size: 1.2rem;
+}
+
+h4 {
+  font-size: 1.1rem;
+}
+
+/*! Section: Lists */
+
+ul {
+  list-style: "→";
+}
+
+ol,
+ul {
+  padding-left: 4ch;
+}
+
+ol ol,
+ol ul,
+ul ol,
+ul ul {
+  padding-left: 2ch;
+}
+
+ol li,
+ul li {
+  padding-left: 1ch;
+}
+
+ol li::marker,
+ul li::marker {
+  font-weight: bolder;
+}
+
+/*! Section: Definitions */
+
+dl {
+  display: grid;
+  grid-template-columns: max-content auto;
+}
+
+dt {
+  grid-column-start: 1;
+}
+
+dd {
+  grid-column-start: 2;
+}
+
+dt:not(:first-child),
+dt:not(:first-child) + dd {
+  margin-top: 1ex;
+}
+
+/*! Section: Quotes */
+
+blockquote {
+  font-style: italic;
+  margin: auto 5ch;
+}
+
+blockquote em {
+  font-style: normal;
+}
+
+/*! Section: Misc  */
+
+code,
+embed,
+img,
+object,
+pre,
+svg,
+video {
+  border-radius: var(--border-radius);
+}
+
+/*! Section: Code */
+
+pre {
+  white-space: pre-wrap;
+  hyphens: none;
+
+  text-align: initial;
+
+  border: 2px solid var(--color-border);
+  padding: var(--margin-3);
+}
+
+pre code {
+  border-radius: 0;
+}
+
+code .co,
+code .in {
+  background: var(--color-code-comments);
+}
+
+code .dv,
+code .fl,
+code .st,
+code .va {
+  background: var(--color-code-literals);
+}
+
+code .kw,
+code .cf {
+  font-weight: bold;
+}
+
+/*! Section: Figures */
+
+img,
+figure {
+  display: block;
+  max-width: 100%;
+
+  margin-left: auto;
+  margin-right: auto;
+
+  object-fit: cover;
+}
+
+/*! Section: Tables */
+
+table {
+  max-width: 80%;
+
+  margin-left: auto;
+  margin-right: auto;
+
+  border-collapse: collapse;
+
+  border-top: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+}
+
+table thead {
+  border-bottom: 1px solid currentColor;
+}
+
+table th,
+table td {
+  padding: 0.5ex 1ch;
+}
+
+table tr + tr td,
+table tr + tr th {
+  padding-top: 0;
+}
+
+/*! Section: Captions */
+
+article {
+  counter-reset: table figure;
+}
+
+figure {
+  counter-increment: figure;
+}
+
+table {
+  counter-increment: table;
+}
+
+table caption,
+figure figcaption {
+  margin: var(--margin-2);
+  text-align: center;
+}
+
+table caption::before {
+  content: var(--table-label) " " counter(table) ". ";
+}
+
+figure figcaption::before {
+  content: var(--figure-label) " " counter(figure) ". ";
+}
+
+/*! Section: Notes */
+
+article::after {
+  display: block;
+  content: "";
+
+  clear: both;
+}
+
+article aside,
+article .aside {
+  font-size: smaller;
+
+  width: 45%;
+  margin-right: -50%;
+
+  float: right;
+  clear: right;
+
+  margin-top: calc(-1rem - 1em);
+  margin-bottom: calc(1rem + 1em);
+}
+
+/*! Region: Footnotes (Pandoc) */
+
+article aside.footnotes > ol {
+  list-style: none;
+}
+
+article aside.footnotes > ol,
+article aside.footnotes > ol > li {
+  padding-left: 0;
+}
+
+article aside.footnotes > ol > li::before {
+  content: counter(list-item);
+  padding: 0 1ch;
+
+  float: left;
+  clear: left;
+
+  margin-right: 1ch;
+
+  border-radius: var(--border-radius);
+  box-shadow:
+    var(--color-border) 0px 0px 0px 1px inset,
+    var(--color-border) 1px 2px 0px 0px;
+}
+
+article aside.footnotes .footnote-back {
+  margin-left: 1ch;
+}
+
+/*! Section: Footer */
+
+nav {
+  font-size: smaller;
+
+  text-align: right;
+  margin-top: var(--margin-4);
+}
+
+/*! Section: Utilities and Hacks */
+
+.break-all {
+  word-break: break-all;
+}
+
+.mt-1 {
+  margin-top: 1rem;
+}
+
+.mt-2 {
+  margin-top: 2rem;
+}
+
+.mt-4 {
+  margin-top: 4rem;
+}
+
+.mt-8 {
+  margin-top: 8rem;
+}

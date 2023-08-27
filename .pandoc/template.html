@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="$lang$">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <!-- $if(site-title)$ -->
+    <title>$title$ — $site-title$</title>
+    <!-- $else$ -->
+    <title>$title$</title>
+    <!-- $ endif $  -->
+    <meta name="generator" content="pandoc" />
+    <!-- $for(author-meta)$ -->
+    <meta name="author" content="$author-meta$" />
+    <!-- $endfor$ -->
+    <!-- $if(date-meta)$ -->
+    <meta name="date" content="$date-meta$" />
+    <!-- $endif$ -->
+    <meta name="theme-color" content="#3b4252" />
+    <!-- Twemoji by Twitter / CC-BY 4.0 -->
+    <link
+      rel="icon"
+      href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzNiAzNiI+PHBhdGggZmlsbD0iIzI2OSIgZD0iTTM1IDI2YzAgMi4yMDktMS43OTEgNC00IDRINWMtMi4yMDkgMC00LTEuNzkxLTQtNFY2LjMxM0MxIDQuMTA0IDYuNzkxIDAgOSAwaDIwLjYyNUMzMi43MTkgMCAzNSAyLjMxMiAzNSA1LjM3NVYyNnoiLz48cGF0aCBmaWxsPSIjQ0NENkREIiBkPSJNMzMgMzBjMCAyLjIwOS0xLjc5MSA0LTQgNEg3Yy0yLjIwOSAwLTQtMS43OTEtNC00VjZjMC00LjExOS0uMDIxLTQgNS00aDIxYzIuMjA5IDAgNCAxLjc5MSA0IDR2MjR6Ii8+PHBhdGggZmlsbD0iI0UxRThFRCIgZD0iTTMxIDMxYzAgMS42NTctMS4zNDMgMy0zIDNINGMtMS42NTcgMC0zLTEuMzQzLTMtM1Y3YzAtMS42NTcgMS4zNDMtMyAzLTNoMjRjMS42NTcgMCAzIDEuMzQzIDMgM3YyNHoiLz48cGF0aCBmaWxsPSIjM0I4OEMzIiBkPSJNMzEgMzJjMCAyLjIwOS0xLjc5MSA0LTQgNEg2Yy0yLjIwOSAwLTQtMS43OTEtNC00VjEwYzAtMi4yMDkgMS43OTEtNCA0LTRoMjFjMi4yMDkgMCA0IDEuNzkxIDQgNHYyMnoiLz48cGF0aCBmaWxsPSIjNTVBQ0VFIiBkPSJNMjkgMzJjMCAyLjIwOS0xLjc5MSA0LTQgNEg2Yy0yLjIwOSAwLTQtMS43OTEtNC00VjEyYzAtMi4yMDkgMS43OTEtNCA0LTRoMTkuMzM1QzI3LjU0NCA4IDI5IDkuNDU2IDI5IDExLjY2NVYzMnoiLz48cGF0aCBmaWxsPSIjMjY5IiBkPSJNNiA2QzQuMzEyIDYgNC4yNjkgNC4wNzggNSAzLjI1IDUuODMyIDIuMzA5IDcuMTI1IDIgOS40MzggMkgxMVYwSDguMjgxQzQuMzEyIDAgMSAyLjUgMSA1LjM3NVYzMmMwIDIuMjA5IDEuNzkxIDQgNCA0aDJWNkg2eiIvPjwvc3ZnPg=="
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Noto+Serif&family=Noto+Sans+Math&family=Noto+Sans+Mono&family=Noto+Emoji&display=swap"
+    />
+  </head>
+  <body>
+    <main>
+      <article>$body$</article>
+      <nav>
+        <a href="index.html">&larr; Back to Index</a>
+        <!-- $if(github-repository)$ -->
+        <span role="none">&middot;</span>
+        <a href="$github-repository$/commits/master/$sourcefile$">History</a>
+        <!-- $endif$ -->
+        <span role="none">&middot;</span>
+        <time datetime="$date-meta$" title="Updated on $date$.">$date$</time>
+      </nav>
+    </main>
+  </body>
+</html>
