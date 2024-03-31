@@ -1,22 +1,7 @@
 /*! Section: Preferences */
 
 :root {
-  --font-main: normal 100%/1.5 "Noto Serif", "Noto Sans Math", "Noto Emoji",
-    serif;
-  --font-math: normal 100%/1.5 "Noto Sans Math", "Noto Serif", "Noto Emoji",
-    serif;
-  --font-mono: normal 100%/1.5 "Noto Sans Mono", "Noto Emoji", monospace;
-
-  --color-background: #ffffff;
-  --color-foreground: #3b4252;
-
-  --color-accent: #3366cc;
-  --color-border: #e5e9f0;
-
-  --color-code-comments: #dbf1ff;
-  --color-code-literals: #f9e0ff;
-
-  --main-width: 864px;
+  --main-width: 1024px;
 
   --margin-1: 8px;
   --margin-2: 12px;
@@ -54,12 +39,12 @@ body {
   margin: 0;
   padding: 0;
 
-  border-top: 8px solid var(--color-accent);
+  border-top: 8px solid #3366cc;
 }
 
 main {
   width: var(--main-width);
-  margin: var(--margin-4) auto;
+  margin: 4rem auto;
 }
 
 main article {
@@ -68,17 +53,25 @@ main article {
 
 /*! Section: Typography */
 
-body {
-  font: var(--font-main);
+:root {
+  font:
+    normal 100%/1.5 "Noto Sans",
+    "Noto Sans Math",
+    "Noto Emoji",
+    sans-serif;
   text-rendering: optimizeLegibility;
 
-  color: var(--color-foreground);
-  background: var(--color-background);
+  color: #3b4252;
+  background: #fff;
+}
+
+p:first-child {
+  margin-top: 0;
 }
 
 a {
-  color: var(--color-accent);
-  text-decoration: none;
+  color: #3366cc;
+  text-decoration: unset;
 }
 
 a:hover {
@@ -94,17 +87,16 @@ sub {
   line-height: 0;
 }
 
-math {
-  font: var(--font-math);
-}
-
 code,
 kbd,
 pre,
 samp,
 tt,
 var {
-  font: var(--font-mono);
+  font:
+    normal 100%/1.5 "Noto Sans Mono",
+    "Noto Emoji",
+    monospace;
 }
 
 small,
@@ -126,14 +118,11 @@ h1,
 h2,
 h3,
 h4 {
-  font-weight: normal;
-
-  margin-top: 2em;
-  margin-bottom: 0;
+  margin: 1rem 0;
 }
 
 h1 {
-  font-size: 1.8rem;
+  font-size: 2rem;
   text-align: center;
 }
 
@@ -223,13 +212,12 @@ video {
 /*! Section: Code */
 
 pre {
+  margin: 1rem;
+
   white-space: pre-wrap;
   hyphens: none;
 
   text-align: initial;
-
-  border: 2px solid var(--color-border);
-  padding: var(--margin-3);
 }
 
 pre code {
@@ -238,14 +226,7 @@ pre code {
 
 code .co,
 code .in {
-  background: var(--color-code-comments);
-}
-
-code .dv,
-code .fl,
-code .st,
-code .va {
-  background: var(--color-code-literals);
+  font-style: italic;
 }
 
 code .kw,
@@ -341,38 +322,8 @@ article .aside {
   float: right;
   clear: right;
 
-  margin-top: calc(-1rem - 1em);
-  margin-bottom: calc(1rem + 1em);
-}
-
-/*! Region: Footnotes (Pandoc) */
-
-article aside.footnotes > ol {
-  list-style: none;
-}
-
-article aside.footnotes > ol,
-article aside.footnotes > ol > li {
-  padding-left: 0;
-}
-
-article aside.footnotes > ol > li::before {
-  content: counter(list-item);
-  padding: 0 1ch;
-
-  float: left;
-  clear: left;
-
-  margin-right: 1ch;
-
-  border-radius: var(--border-radius);
-  box-shadow:
-    var(--color-border) 0px 0px 0px 1px inset,
-    var(--color-border) 1px 2px 0px 0px;
-}
-
-article aside.footnotes .footnote-back {
-  margin-left: 1ch;
+  margin-top: -2rem;
+  margin-bottom: 2rem;
 }
 
 /*! Section: Footer */

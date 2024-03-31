@@ -13,7 +13,7 @@ metadata-file: .pandoc/metadata.yaml
 
 table-of-contents: true
 
-section-divs: true
+section-divs: false
 reference-location: block
 
 filters:

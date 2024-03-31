@@ -1,7 +1,3 @@
----
-site-title:
----
+# Hello, world
 
-# `/home/rphln`
-
-Hello world!
+Nothing to see in here yet.
