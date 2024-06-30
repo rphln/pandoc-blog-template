@@ -1,7 +1,7 @@
 /*! Section: Preferences */
 
 :root {
-  --main-width: 1024px;
+  --main-width: 72ch;
 
   --margin-1: 8px;
   --margin-2: 12px;
@@ -38,17 +38,11 @@ html {
 body {
   margin: 0;
   padding: 0;
-
-  border-top: 8px solid #3366cc;
 }
 
 main {
   width: var(--main-width);
   margin: 4rem auto;
-}
-
-main article {
-  width: calc(200% / 3);
 }
 
 /*! Section: Typography */
@@ -61,8 +55,12 @@ main article {
     sans-serif;
   text-rendering: optimizeLegibility;
 
-  color: #3b4252;
+  color: #2e3440;
   background: #fff;
+}
+
+body {
+  font: inherit;
 }
 
 p:first-child {
@@ -212,26 +210,26 @@ video {
 /*! Section: Code */
 
 pre {
-  margin: 1rem;
+  margin: 1rlh -12ch;
 
   white-space: pre-wrap;
   hyphens: none;
 
   text-align: initial;
-}
 
-pre code {
-  border-radius: 0;
-}
+  code {
+    border-radius: 0;
 
-code .co,
-code .in {
-  font-style: italic;
-}
+    .co,
+    .in {
+      font-style: italic;
+    }
 
-code .kw,
-code .cf {
-  font-weight: bold;
+    .kw,
+    .cf {
+      color: #3366cc;
+    }
+  }
 }
 
 /*! Section: Figures */
@@ -322,8 +320,25 @@ article .aside {
   float: right;
   clear: right;
 
-  margin-top: -2rem;
-  margin-bottom: 2rem;
+  margin-top: -2rlh;
+  margin-bottom: 3rlh;
+
+  padding: 1ch 2ch;
+
+  background: #f8fafc;
+  border-radius: 8px;
+
+  :last-child {
+    margin-bottom: 0;
+  }
+
+  &.danger {
+    background: #fbeff3;
+  }
+
+  &.info {
+    background: #eff6fb;
+  }
 }
 
 /*! Section: Footer */
